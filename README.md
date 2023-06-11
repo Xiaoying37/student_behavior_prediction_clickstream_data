@@ -1,6 +1,5 @@
 # student_behavior_prediction_clickstream_data
 
-Xiaoying Lin, Xinchang Liu
 https://www.kaggle.com/competitions/edm-cup-2023
 
 ## Definition of the prediction task
@@ -55,11 +54,11 @@ In the problem_details dataset, certain problems were missing because they had b
 
 For the sequence_details dataset, some sequences had duplicate rows because they were present in multiple locations within units. Meanwhile, there might be no folder at this path depth. In such cases, for the sequence_folder_path_level_4 and sequence_folder_path_level_5, we filled the column with 'NA'.
 
-Exploratory Analysis
+## Exploratory Analysis
+
 We only focused on problem_ID because it can directly connect with the testing file, examine the relationship between them and the final score. 
 We firstly merged the training unit test scores (tuts) with the problem details (problemd) by the problem_id, to create a new dataframe problem_df for examining the correlation between different variables. For continuous variables, we use the corr() method to calculate correlation of two columns, excluding NA/null values. This gives us a basic understanding of possible relationships between variables.
 
-Based on the graph, most of the variables have a low correlation, so we did not use them ultimately.
 For exploring categorical variables, we created a plot for the scores distribution based on problem types. We focus on problem_type because of the large number of unique values in problem_skill_code and problem_skill_description. This can reveal patterns in how different problem types might be influencing student performance. Based on the graph, we can see that there might be some relationship between the performance score and problem type, we applied that as one of the predictors. 
 
 ## Feature Engineering
